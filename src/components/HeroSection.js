@@ -27,6 +27,7 @@ export default class HeroSection extends React.Component {
         const hasText = title || subtitle || content || !_.isEmpty(actions);
         const hasMedia = image || videoEmbed;
         const isHorizontal = hasText && hasMedia && (mediaPosition === 'left' || mediaPosition === 'right');
+        const badge = _.get(section, 'badge');
 
         return (
             <section
@@ -86,6 +87,7 @@ export default class HeroSection extends React.Component {
                                     'text-right': alignX === 'right'
                                 })}
                             >
+                                {badge && <div className="badge">{badge}</div>}
                                 {title && <h1 className="hero__title" data-sb-field-path=".title">{title}</h1>}
                                 {subtitle && <p className="hero__subtitle" data-sb-field-path=".subtitle">{subtitle}</p>}
                                 {content && <div className="hero__copy" data-sb-field-path=".content">{markdownify(content)}</div>}
