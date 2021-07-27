@@ -496,6 +496,9 @@ models:
         name: subtitle
         label: Subtitle
         description: The subtitle of the section displayed below the title
+      - type: string
+        name: badge
+        label: badge
       - type: markdown
         name: content
         label: Content
